@@ -1,7 +1,27 @@
 import tkinter as tk
+import json
 
 def click():
-    print(f"{nome.get()} foi cadastrado!")
+    with open('app/models/user_model.json', 'r') as file:
+        user = json.load(file)
+        file.close()
+    user['nome'] = nome.get()
+    user['sobrenome'] = sobrenome.get()
+    user['idade'] = idade.get()
+    user['curso'] = curso.get()
+    user['instituto'] = instituto.get()
+
+    with open('usuarios.json', 'r')as file:
+        data_base = json.load(file)
+        file.close()
+    data_base['usuarios'].append(user)
+    data_base['quantidade'] = len(data_base['usuarios'])
+
+    with open('usuarios.json', 'w') as file:
+        json.dump(data_base, file, indent=4)
+        file.close()
+
+    # print(f"{user.nome} foi cadastrado!")
 
 def addRegister(name=''):
     register_label = tk.Label(window, text=name)
