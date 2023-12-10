@@ -1,15 +1,17 @@
 import tkinter as tk
 import json
+from utils.utils import generate_random_id
 
 def click():
     with open('app/models/user_model.json', 'r') as file:
         user = json.load(file)
         file.close()
-    user['nome'] = nome.get()
+    user['nome']      = nome.get()
     user['sobrenome'] = sobrenome.get()
-    user['idade'] = idade.get()
-    user['curso'] = curso.get()
+    user['idade']     = int(idade.get())
+    user['curso']     = curso.get()
     user['instituto'] = instituto.get()
+    user['_id']        = generate_random_id()
 
     with open('usuarios.json', 'r')as file:
         data_base = json.load(file)
@@ -18,16 +20,14 @@ def click():
     data_base['quantidade'] = len(data_base['usuarios'])
 
     with open('usuarios.json', 'w') as file:
-        json.dump(data_base, file, indent=4)
+        json.dump(data_base, file, indent=4, ensure_ascii=False)
         file.close()
-
-    # print(f"{user.nome} foi cadastrado!")
 
 def addRegister(name=''):
     register_label = tk.Label(window, text=name)
     register_label.pack(padx=10)
 
-    register = tk.Entry(window)
+    register = tk.Entry(window,)
     register.pack(padx=10, pady=10)
 
     return register
