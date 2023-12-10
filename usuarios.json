@@ -1,38 +1,6 @@
 {
-    "quantidade": 5,
+    "quantidade": 1,
     "usuarios": [
-        {
-            "nome": "Grande",
-            "sobrenome": "Leite",
-            "idade": "63",
-            "curso": "Computacao",
-            "instituto": "IFCE",
-            "_id": ""
-        },
-        {
-            "nome": "Marcos",
-            "sobrenome": "Antonio",
-            "idade": "22",
-            "curso": "Ciência da Computação",
-            "instituto": "IFCE",
-            "_id": ""
-        },
-        {
-            "nome": "Marcos",
-            "sobrenome": "Cirineu",
-            "idade": "110",
-            "curso": "Matemática",
-            "instituto": "UFC",
-            "_id": ""
-        },
-        {
-            "nome": "Luiz",
-            "sobrenome": "Henrique",
-            "idade": "28",
-            "curso": "Matemática",
-            "instituto": "UECE",
-            "_id": "1qa6ggytol"
-        },
         {
             "nome": "João",
             "sobrenome": "Abreu",
